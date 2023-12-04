@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import { createClient } from "next-sanity";
 import { Inter } from "next/font/google";
