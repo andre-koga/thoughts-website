@@ -1,7 +1,4 @@
-"use client";
-
 import type { Metadata } from "next";
-import { createClient } from "next-sanity";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -17,18 +14,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const client = createClient({
-    projectId: "kcartf0h",
-    dataset: "production",
-    apiVersion: "2023-12-04",
-    useCdn: true,
-  });
-
-  const query = `*[_type == "post"]`;
-  const posts = await client.fetch(query);
-
-  console.log(posts[0]);
-
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
