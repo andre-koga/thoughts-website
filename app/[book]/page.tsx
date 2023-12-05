@@ -1,24 +1,10 @@
 import { GetBookData } from "@/app/lib/actions";
-import Link from "next/link";
+import { book } from "@/app/lib/definitions";
+import { PortableText } from "@portabletext/react";
+import Text from "@/app/ui/Text";
 
 export default async function Page({ params }: { params: { book: string } }) {
-  const book = await GetBookData(params.book);
+  const book: book = await GetBookData(params.book);
 
-  //console.log(book);
-
-  if (!book.pages) return <div>Book not found</div>;
-
-  return (
-    <main>
-      <ul>
-        {book.pages.map((page, i) => {
-          return (
-            <Link href={`${params.book}/${page.slug.current}`} key={i}>
-              {page.title}
-            </Link>
-          );
-        })}
-      </ul>
-    </main>
-  );
+  return <Text text={book.preface} />;
 }

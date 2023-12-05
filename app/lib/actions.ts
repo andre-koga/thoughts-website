@@ -1,5 +1,11 @@
-import { book, bookCover, page } from "@/app/lib/definitions";
+import { Color, book, bookCover, page } from "@/app/lib/definitions";
 import { client } from "@/app/lib/utils";
+const { getPaletteFromURL } = require("color-thief-node");
+
+export async function GetColors(url: string): Promise<Color[]> {
+  const colorPallete = await getPaletteFromURL(url, 2);
+  return colorPallete;
+}
 
 export async function GetAllBookCovers(): Promise<bookCover[]> {
   const query = `*[_type == "book"]{
@@ -20,7 +26,9 @@ export async function GetAllBooks(): Promise<book[]> {
 export async function GetBookData(slug: string): Promise<book> {
   const query = `*[_type == "book" && slug.current == "${slug}"]{
     title, slug, image, preface, status,
-    "pages": pages[]->
+    pages[]->{
+      title, slug
+    }
   }
   `;
   const book = await client.fetch(query);
