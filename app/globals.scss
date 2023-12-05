@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+article {
+  p {
+    &:empty {
+      height: 0.5rem;
+    }
+  }
+}

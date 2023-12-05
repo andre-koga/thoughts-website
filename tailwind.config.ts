@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: "#1a202c",
-        darky: "#1a202c",
-        mid: "#1a202c",
-        lighty: "#1a202c",
-        light: "#1a202c",
+        dark: "#36454F",
+        darky: "#5C768E",
+        mid: "#8C9AA4",
+        lighty: "#B4C1CC",
+        light: "#E8F0F5",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;
