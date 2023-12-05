@@ -1,5 +1,14 @@
-import { book, page } from "@/app/lib/definitions";
+import { book, bookCover, page } from "@/app/lib/definitions";
 import { client } from "@/app/lib/utils";
+
+export async function GetAllBookCovers(): Promise<bookCover[]> {
+  const query = `*[_type == "book"]{
+    title, slug, image
+  }`;
+  const books: book[] = await client.fetch(query);
+
+  return books;
+}
 
 export async function GetAllBooks(): Promise<book[]> {
   const query = `*[_type == "book"]`;

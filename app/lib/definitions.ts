@@ -14,6 +14,13 @@ export type book = {
   _id: string;
 };
 
+export type bookCover = {
+  title: string;
+  slug: Slug;
+  image: Image;
+  status: "finished" | "ongoing" | "paused";
+};
+
 export type page = {
   title: string;
   slug: Slug;

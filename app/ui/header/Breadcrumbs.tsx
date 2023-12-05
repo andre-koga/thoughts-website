@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { dm_serif } from "@/app/lib/fonts";
 
 export default function Breadcrumbs() {
   const pathname = usePathname();
@@ -9,8 +10,8 @@ export default function Breadcrumbs() {
 
   return (
     <nav>
-      <ul className="flex gap-2">
-        <li className="bg-lighty rounded px-2">
+      <ul className="flex items-center gap-2">
+        <li className={`${dm_serif.className} text-2xl font-bold text-dark`}>
           <Link href="/">thoughts</Link>
         </li>
         {pathname != "/" &&
@@ -18,7 +19,7 @@ export default function Breadcrumbs() {
             const href = `/${paths.slice(0, i + 1).join("/")}`;
 
             return (
-              <li key={i} className="bg-lighty rounded px-2">
+              <li key={i} className="rounded bg-lighty px-2">
                 <Link href={href}>{path}</Link>
               </li>
             );

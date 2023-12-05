@@ -17,11 +17,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${noto_serif.className} bg-light flex flex-col text-dark min-h-screen`}
+        className={`${noto_serif.className} flex min-h-screen flex-col bg-light text-dark`}
       >
-        <Header />
-        <div className="flex-grow">{children}</div>
-        <Footer />
+        <div>
+          <div className="flex-grow">{children}</div>
+        </div>
       </body>
     </html>
   );
