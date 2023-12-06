@@ -6,5 +6,5 @@ import Text from "@/app/ui/Text";
 export default async function Page({ params }: { params: { book: string } }) {
   const book: book = await GetBookData(params.book);
 
-  return <Text text={book.preface} />;
+  return <Text book={book} />;
 }

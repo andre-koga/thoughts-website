@@ -10,5 +10,5 @@ export default async function Page({
 }) {
   const page: page = await GetPageData(params.post);
 
-  return <Text text={page.content} />;
+  return <Text page={page} />;
 }

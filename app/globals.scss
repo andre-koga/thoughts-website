@@ -56,6 +56,30 @@ $light: #e8f0f5;
   }
 }
 
+@keyframes top-size {
+  0% {
+    height: 55vmax;
+  }
+  50% {
+    height: 60vmax;
+  }
+  100% {
+    height: 60vmax;
+  }
+}
+
+@keyframes bottom-size {
+  0% {
+    height: 60vmax;
+  }
+  50% {
+    height: 45vmax;
+  }
+  100% {
+    height: 55vmax;
+  }
+}
+
 @keyframes bg-color {
   0% {
     @apply bg-pink-200;
@@ -66,6 +90,16 @@ $light: #e8f0f5;
   100% {
     @apply bg-teal-200;
   }
+}
+
+.top-scircle {
+  will-change: transform;
+  animation: top-size ease-in-out 12s infinite alternate;
+}
+
+.bottom-scircle {
+  will-change: transform;
+  animation: bottom-size ease-in-out 12s infinite alternate;
 }
 
 .top-circle {
@@ -84,6 +118,19 @@ $light: #e8f0f5;
 
 .text-shadow {
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in-out {
+  animation: fadeInOut ease-in-out 0.3s forwards;
 }
 
 @keyframes hover-anim {

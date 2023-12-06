@@ -42,3 +42,7 @@ export async function GetPageData(slug: string): Promise<page> {
 
   return page[0];
 }
+
+export function GetHex(color: Color): string {
+  return "#" + color.map((c) => c.toString(16)).join("");
+}
