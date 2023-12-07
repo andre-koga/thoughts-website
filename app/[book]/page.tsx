@@ -3,6 +3,8 @@ import { book } from "@/app/lib/definitions";
 import Text from "@/app/ui/Text";
 import PageItems from "@/app/ui/header/PageItems";
 
+export const revalidate = 0;
+
 export default async function Page({
   params,
   searchParams,

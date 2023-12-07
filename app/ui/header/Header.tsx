@@ -3,6 +3,8 @@ import { dm_serif } from "@/app/lib/fonts";
 import Link from "next/link";
 import BookCovers from "@/app/ui/header/BookCovers";
 
+export const revalidate = 0;
+
 export default async function Header() {
   const bookCovers = await GetAllBookCovers();
 

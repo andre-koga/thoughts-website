@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   description: "A collection of thoughts by Koga",
 };
 
-export const revalidate = 0;
-
 export default async function RootLayout({
   children,
 }: {

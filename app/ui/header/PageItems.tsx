@@ -5,6 +5,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
+export const revalidate = 0;
+
 const amountPerPage = 5;
 
 export default function PageItems({

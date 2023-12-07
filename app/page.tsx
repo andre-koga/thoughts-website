@@ -4,6 +4,8 @@ import Image from "next/image";
 import { urlFor } from "@/app/lib/utils";
 import Link from "next/link";
 
+export const revalidate = 0;
+
 export default async function Home() {
   const bookCovers: bookCover[] = await GetAllBookCovers();
   const recent = await GetRecentPost();
