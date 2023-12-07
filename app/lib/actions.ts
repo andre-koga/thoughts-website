@@ -1,6 +1,8 @@
 import { book, bookCover, page } from "@/app/lib/definitions";
 import { client } from "@/app/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export async function GetAllBookCovers(): Promise<bookCover[]> {
   const query = `*[_type == "book"]{
     title, slug, image

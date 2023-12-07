@@ -2,7 +2,6 @@ import { GetBookData, GetPageData } from "@/app/lib/actions";
 import { book, page } from "@/app/lib/definitions";
 import Text from "@/app/ui/Text";
 import PageItems from "@/app/ui/header/PageItems";
-import { PortableText } from "@portabletext/react";
 
 export default async function Page({
   params,

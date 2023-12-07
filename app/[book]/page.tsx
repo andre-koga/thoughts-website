@@ -1,6 +1,5 @@
 import { GetBookData } from "@/app/lib/actions";
 import { book } from "@/app/lib/definitions";
-import { PortableText } from "@portabletext/react";
 import Text from "@/app/ui/Text";
 import PageItems from "@/app/ui/header/PageItems";
 
