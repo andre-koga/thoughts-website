@@ -17,7 +17,7 @@ export default async function Home() {
         <div className="bottom-circle absolute -bottom-16 -right-16 -z-20 aspect-square rounded-tl-full blur-[100px]" />
       </div>
       <Link href={`/${recent[2]}/${recent[1]}`}>
-        <div className="mx-6 mb-4 rounded bg-white bg-opacity-70 px-2 py-1 text-black transition-all hover:scale-95 active:scale-90">
+        <div className="mx-2 mb-4 rounded bg-white bg-opacity-70 px-2 py-1 text-sm text-black transition-all hover:scale-95 active:scale-90 sm:mx-6 sm:mb-4 sm:text-base">
           <p className="text-center">latest post: {recent[0]}</p>
         </div>
       </Link>
