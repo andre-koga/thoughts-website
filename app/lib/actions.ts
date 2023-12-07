@@ -36,3 +36,18 @@ export async function GetPageData(slug: string): Promise<page> {
 
   return page[0];
 }
+
+export async function GetRecentPost(): Promise<string[]> {
+  const query = `*[_type == "page"] | order(date desc)[0]{
+    title, slug, _id
+  }`;
+  const page = await client.fetch(query);
+
+  const booksQuery = `*[_type == "book" && references("${page._id}")][0]{
+    slug
+  }`;
+  const books = await client.fetch(booksQuery);
+
+  return [page.title, page.slug.current, books.slug.current];
+  // return ["", "", ""];
+}

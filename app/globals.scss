@@ -156,16 +156,10 @@ $light: #e8f0f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $light;
+  background: $dark;
   @apply rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $lighty;
-}
-
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
+  background: $darky;
 }

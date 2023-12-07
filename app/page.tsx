@@ -1,4 +1,4 @@
-import { GetAllBookCovers } from "@/app/lib/actions";
+import { GetAllBookCovers, GetRecentPost } from "@/app/lib/actions";
 import { bookCover } from "@/app/lib/definitions";
 import Image from "next/image";
 import { urlFor } from "@/app/lib/utils";
@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export default async function Home() {
   const bookCovers: bookCover[] = await GetAllBookCovers();
+  const recent = await GetRecentPost();
 
   return (
     <main>
@@ -15,12 +16,17 @@ export default async function Home() {
         <div className="top-circle absolute -left-16 -top-16 -z-20 aspect-square rounded-br-full blur-[100px]" />
         <div className="bottom-circle absolute -bottom-16 -right-16 -z-20 aspect-square rounded-tl-full blur-[100px]" />
       </div>
-      <ul className="m-2 mt-0 grid grid-cols-2 gap-4 sm:m-6 sm:mt-0">
+      <Link href={`/${recent[2]}/${recent[1]}`}>
+        <div className="mx-6 mb-4 rounded bg-white bg-opacity-70 px-2 py-1 text-black transition-all hover:scale-95 active:scale-90">
+          <p className="text-center">latest post: {recent[0]}</p>
+        </div>
+      </Link>
+      <ul className="m-2 mt-0 grid grid-cols-3 gap-4 sm:m-6 sm:mt-0 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7">
         {bookCovers.map((bookCover, i) => {
           return (
             <Link
               href={"/" + bookCover.slug.current}
-              className="text-shadow relative grid aspect-square items-center overflow-hidden rounded-md text-white shadow-lg transition-all hover:scale-95 active:scale-90"
+              className="text-shadow relative grid aspect-[1/1.414] items-center overflow-hidden rounded-md text-white shadow-lg transition-all hover:scale-95 active:scale-90"
               key={i}
             >
               <li className="absolute bottom-0 left-0 right-0 top-0 -z-10">

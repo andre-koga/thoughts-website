@@ -99,7 +99,7 @@ export default function PageItems({
           <li
             key={i}
             className={clsx(
-              "order-3 flex-grow rounded-md bg-opacity-70 px-1 py-0.5 text-center text-sm transition-all hover:scale-95 active:scale-90 sm:flex-grow-0",
+              "order-3 flex-grow rounded-md bg-opacity-70 px-2 py-0.5 text-center text-sm transition-all hover:scale-95 active:scale-90 sm:flex-grow-0",
               {
                 "bg-black text-light":
                   page.slug.current == pathname.split("/")[2],
