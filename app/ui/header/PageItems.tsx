@@ -47,7 +47,7 @@ export default function PageItems({
 
   return (
     <>
-      <div className="mb-4 mr-auto flex gap-1 rounded-md bg-white bg-opacity-70 p-1 text-black">
+      <div className="mx-2 mb-4 mr-auto flex gap-1 rounded-md bg-white bg-opacity-70 p-1 text-black sm:mx-6 sm:mr-auto">
         {currentPage > 0 && (
           <button
             onClick={() => {
@@ -94,7 +94,7 @@ export default function PageItems({
           </button>
         )}
       </div>
-      <ul className="mb-4 flex flex-wrap content-start gap-2">
+      <ul className="mx-2 mb-4 flex flex-wrap content-start gap-2 sm:mx-6">
         {cutPages.map((page, i) => (
           <li
             key={i}

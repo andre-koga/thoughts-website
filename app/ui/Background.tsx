@@ -5,11 +5,11 @@ import { Palette } from "color-thief-react";
 export default function Background({ url }: { url: string }) {
   return (
     <Palette src={url} format="hex" colorCount={3} crossOrigin="">
-      {({ data, loading, error }) => (
-        <div className="noise absolute left-0 top-0 -z-30 h-screen w-screen rounded-2xl border-4 border-white sm:rounded-[2rem] sm:border-8">
-          <div className="fade-in-out absolute -z-10 h-screen w-screen bg-light" />
+      {({ data }) => (
+        <div className="noise relative left-0 top-0 -z-30 h-full w-full rounded-2xl border-4 border-white sm:rounded-[2rem] sm:border-8">
+          <div className="fade-in-out absolute -z-10 h-full w-full bg-light" />
           <div
-            className="absolute -z-30 h-screen w-screen"
+            className="absolute -z-30 h-full w-full"
             style={{ backgroundColor: data ? data[1] : "#000000" }}
           />
           <div

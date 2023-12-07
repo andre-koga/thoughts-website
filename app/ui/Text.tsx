@@ -7,7 +7,7 @@ import { urlFor } from "../lib/utils";
 export default function Text({ page, book }: { page?: page; book?: book }) {
   if (page) {
     return (
-      <main className="grid flex-grow items-center overflow-auto rounded-lg bg-black bg-opacity-70 p-4">
+      <main className="m-2 mt-0 grid flex-grow items-center overflow-auto rounded-lg bg-black bg-opacity-70 p-4 sm:m-6 sm:mt-0">
         <article className="prose prose-slate prose-invert mx-auto py-4 sm:py-6 md:py-8">
           <h2>{page.title}</h2>
           <PortableText value={page.content} />
@@ -18,7 +18,7 @@ export default function Text({ page, book }: { page?: page; book?: book }) {
 
   if (book) {
     return (
-      <main className="grid flex-grow items-center overflow-auto rounded-lg bg-black bg-opacity-70 p-4">
+      <main className="m-2 mt-0 grid flex-grow items-center overflow-auto rounded-lg bg-black bg-opacity-70 p-4 sm:m-6 sm:mt-0">
         <article className="prose prose-slate prose-invert mx-auto -mt-16 py-4 sm:py-6 md:py-8">
           <div className="relative h-20 w-full">
             <Image
