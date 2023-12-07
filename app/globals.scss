@@ -94,26 +94,26 @@ $light: #e8f0f5;
 
 .top-scircle {
   will-change: transform;
-  animation: top-size ease-in-out 12s infinite alternate;
+  animation: top-size ease-in-out 10s infinite alternate;
 }
 
 .bottom-scircle {
   will-change: transform;
-  animation: bottom-size ease-in-out 12s infinite alternate;
+  animation: bottom-size ease-in-out 10s infinite alternate;
 }
 
 .top-circle {
   will-change: transform;
-  animation: top-color ease-in-out 12s infinite alternate;
+  animation: top-color ease-in-out 10s infinite alternate;
 }
 
 .bottom-circle {
   will-change: transform;
-  animation: bottom-color ease-in-out 12s infinite alternate;
+  animation: bottom-color ease-in-out 10s infinite alternate;
 }
 
 .bg-noise {
-  animation: bg-color ease-in-out 12s infinite alternate;
+  animation: bg-color ease-in-out 10s infinite alternate;
 }
 
 .text-shadow {
@@ -122,7 +122,7 @@ $light: #e8f0f5;
 
 @keyframes fadeInOut {
   0% {
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
     opacity: 0;

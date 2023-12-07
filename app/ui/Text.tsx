@@ -19,15 +19,15 @@ export default function Text({ page, book }: { page?: page; book?: book }) {
   if (book) {
     return (
       <main className="grid flex-grow items-center overflow-auto rounded-lg bg-black bg-opacity-70 p-4">
-        <div className="relative aspect-square h-40 overflow-hidden rounded">
-          <Image
-            alt="Book cover"
-            src={urlFor(book.image).url()}
-            fill={true}
-            className="object-cover"
-          />
-        </div>
-        <article className="prose prose-slate prose-invert mx-auto py-4 sm:py-6 md:py-8">
+        <article className="prose prose-slate prose-invert mx-auto -mt-16 py-4 sm:py-6 md:py-8">
+          <div className="relative h-20 w-full">
+            <Image
+              alt="Book cover"
+              src={urlFor(book.image).url()}
+              fill={true}
+              className="overflow-hidden rounded-md object-cover"
+            />
+          </div>
           <h2>Preface</h2>
           <PortableText value={book.preface} />
         </article>

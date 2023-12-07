@@ -4,7 +4,7 @@ import { GetHex } from "@/app/lib/actions";
 export default function Background({ colors }: { colors: Color[] }) {
   return (
     <div className="noise absolute left-0 top-0 -z-30 h-screen w-screen rounded-2xl border-4 border-white sm:rounded-[2rem] sm:border-8">
-      <div className="fade-in-out absolute -z-10 h-screen w-screen bg-black" />
+      <div className="fade-in-out absolute -z-10 h-screen w-screen bg-light" />
       <div
         className="absolute -z-30 h-screen w-screen"
         style={{ backgroundColor: GetHex(colors[1]) }}

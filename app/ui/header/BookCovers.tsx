@@ -17,7 +17,7 @@ export default function BookCovers({ value }: { value: bookCover[] }) {
           <Link
             href={"/" + bookCover.slug.current}
             className={clsx(
-              "text-shadow relative grid items-center overflow-hidden rounded-md text-white shadow-md transition-all",
+              "text-shadow relative grid items-center overflow-hidden rounded-md text-white shadow-md transition-all hover:scale-90 active:scale-75",
               {
                 "order-1 aspect-[3/1] text-lg":
                   pathname.split("/")[1] == bookCover.slug.current,

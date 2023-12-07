@@ -17,7 +17,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${noto_serif.className} flex h-screen flex-col overflow-hidden bg-light text-dark`}
+        className={`${noto_serif.className} flex h-screen flex-col overflow-hidden bg-white text-dark`}
       >
         <Header />
         <div className="mx-2 mb-2 flex flex-grow flex-col overflow-hidden sm:mx-6 sm:mb-6">

@@ -1,6 +1,5 @@
 import { GetBookData, GetColors } from "@/app/lib/actions";
 import { urlFor } from "@/app/lib/utils";
-import PageItems from "@/app/ui/header/PageItems";
 import Background from "@/app/ui/Background";
 
 export default async function Layout({
@@ -18,9 +17,6 @@ export default async function Layout({
   return (
     <>
       <Background colors={colors} />
-      <ul className="mb-4 flex flex-wrap content-start items-start gap-2">
-        <PageItems book={book} />
-      </ul>
       {children}
     </>
   );
