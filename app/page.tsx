@@ -17,11 +17,11 @@ export default async function Home() {
         <div className="bottom-circle absolute -bottom-16 -right-16 -z-20 aspect-square rounded-tl-full blur-[100px]" />
       </div>
       <Link href={`/${recent[2]}/${recent[1]}`}>
-        <div className="mx-2 mb-4 rounded bg-white bg-opacity-70 px-2 py-1 text-sm text-black transition-all hover:scale-95 active:scale-90 sm:mx-6 sm:mb-4 sm:text-base">
+        <div className="mx-2 mb-2 rounded bg-white bg-opacity-70 px-2 py-1 text-sm text-black transition-all hover:scale-95 active:scale-90 sm:mx-6 sm:mb-4 sm:text-base">
           <p className="text-center">latest post: {recent[0]}</p>
         </div>
       </Link>
-      <ul className="m-2 mt-0 grid grid-cols-3 gap-4 sm:m-6 sm:mt-0 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7">
+      <ul className="m-2 mt-0 grid grid-cols-3 gap-2 sm:m-6 sm:mt-0 sm:grid-cols-4 sm:gap-4 md:grid-cols-5 lg:grid-cols-7">
         {bookCovers.map((bookCover, i) => {
           return (
             <Link

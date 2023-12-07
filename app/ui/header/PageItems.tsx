@@ -47,7 +47,7 @@ export default function PageItems({
 
   return (
     <>
-      <div className="mx-2 mb-4 mr-auto flex gap-1 rounded-md bg-white bg-opacity-70 p-1 text-black sm:mx-6 sm:mr-auto">
+      <div className="mx-2 mb-2 mr-auto flex gap-1 rounded-md bg-white bg-opacity-70 p-1 text-black sm:mx-6 sm:mb-4 sm:mr-auto">
         {currentPage > 0 && (
           <button
             onClick={() => {
@@ -94,29 +94,30 @@ export default function PageItems({
           </button>
         )}
       </div>
-      <ul className="mx-2 mb-4 flex flex-wrap content-start gap-2 sm:mx-6">
+      <ul className="mx-2 mb-2 flex flex-wrap content-start gap-2 sm:mx-6 sm:mb-4">
         {cutPages.map((page, i) => (
-          <li
+          <Link
+            className="flex-grow sm:flex-grow-0"
+            href={`/${slug.current}/${page.slug.current}?${searchParams}`}
             key={i}
-            className={clsx(
-              "order-3 flex-grow rounded-md bg-opacity-70 px-2 py-0.5 text-center text-sm transition-all hover:scale-95 active:scale-90 sm:flex-grow-0",
-              {
-                "bg-black text-light":
-                  page.slug.current == pathname.split("/")[2],
-              },
-              {
-                "bg-white text-black":
-                  page.slug.current != pathname.split("/")[2],
-              },
-            )}
           >
-            <Link
-              href={`/${slug.current}/${page.slug.current}?${searchParams}`}
+            <li
               key={i}
+              className={clsx(
+                "rounded-md bg-opacity-70 px-2 py-0.5 text-center text-sm transition-all hover:scale-95 active:scale-90",
+                {
+                  "bg-black text-light":
+                    page.slug.current == pathname.split("/")[2],
+                },
+                {
+                  "bg-white text-black":
+                    page.slug.current != pathname.split("/")[2],
+                },
+              )}
             >
               {page.title}
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
     </>

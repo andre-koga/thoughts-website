@@ -11,13 +11,13 @@ export default function BookCovers({ value }: { value: bookCover[] }) {
   const pathname = usePathname();
 
   return (
-    <nav className="mt-4 flex h-8 gap-2">
+    <nav className="mt-4 flex h-8 gap-2 sm:gap-4">
       {value.map((bookCover, i) => {
         return (
           <Link
             href={"/" + bookCover.slug.current}
             className={clsx(
-              "text-shadow relative grid items-center overflow-hidden rounded-md text-white shadow-md transition-all hover:scale-90 active:scale-75",
+              "text-shadow relative grid items-center overflow-hidden rounded-md text-white shadow-md transition-all active:scale-75 sm:hover:scale-90",
               {
                 "order-1 aspect-[3/1] text-lg":
                   pathname.split("/")[1] == bookCover.slug.current,

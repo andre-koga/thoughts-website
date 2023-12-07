@@ -8,7 +8,7 @@ export default async function Header() {
 
   return (
     <header>
-      <section className="m-2 -mb-1 mt-4 flex flex-col items-start sm:mx-6 sm:mb-0 sm:mt-6">
+      <section className="m-2 -mb-2 mt-4 flex flex-col items-start sm:mx-6 sm:mb-0 sm:mt-6">
         <Link
           className="transition-all hover:scale-95 active:scale-90"
           href={"/"}
@@ -20,7 +20,7 @@ export default async function Header() {
           </h1>
         </Link>
       </section>
-      <section className="m-2 mb-4 sm:mx-6 sm:mb-4">
+      <section className="m-2 mb-2 sm:mx-6 sm:mb-4">
         <BookCovers value={bookCovers} />
       </section>
     </header>
