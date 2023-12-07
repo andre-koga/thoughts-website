@@ -1,4 +1,4 @@
-import { GetBookData, GetColors } from "@/app/lib/actions";
+import { GetBookData } from "@/app/lib/actions";
 import { urlFor } from "@/app/lib/utils";
 import Background from "@/app/ui/Background";
 
@@ -12,11 +12,9 @@ export default async function Layout({
   const book = await GetBookData(params.book);
   const url = urlFor(book.image).url();
 
-  const colors = await GetColors(url);
-
   return (
     <>
-      <Background colors={colors} />
+      <Background url={url} />
       {children}
     </>
   );

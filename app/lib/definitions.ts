@@ -32,5 +32,3 @@ export type page = {
   _type: string;
   _id: string;
 };
-
-export type Color = [number, number, number];

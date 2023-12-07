@@ -1,11 +1,5 @@
-import { Color, book, bookCover, page } from "@/app/lib/definitions";
+import { book, bookCover, page } from "@/app/lib/definitions";
 import { client } from "@/app/lib/utils";
-const { getPaletteFromURL } = require("color-thief-node");
-
-export async function GetColors(url: string): Promise<Color[]> {
-  const colorPallete = await getPaletteFromURL(url, 2);
-  return colorPallete;
-}
 
 export async function GetAllBookCovers(): Promise<bookCover[]> {
   const query = `*[_type == "book"]{
@@ -41,8 +35,4 @@ export async function GetPageData(slug: string): Promise<page> {
   const page = await client.fetch(query);
 
   return page[0];
-}
-
-export function GetHex(color: Color): string {
-  return "#" + color.map((c) => c.toString(16)).join("");
 }
