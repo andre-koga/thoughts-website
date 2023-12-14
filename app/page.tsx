@@ -11,7 +11,7 @@ export default async function Home() {
   const recent = await GetRecentPost();
 
   return (
-    <main>
+    <main className="flex-grow">
       <div className="noise relative left-0 top-0 -z-30 h-full w-full rounded-2xl border-4 border-white sm:rounded-[2rem] sm:border-8">
         <div className="fade-in-out absolute -z-10 h-full w-full bg-light" />
         <div className="bg-noise absolute -z-30 h-full w-full" />
@@ -31,15 +31,24 @@ export default async function Home() {
               className="text-shadow relative grid aspect-[1/1.414] items-center overflow-hidden rounded-md text-white shadow-lg transition-all hover:scale-95 active:scale-90"
               key={i}
             >
+              {bookCover.status == "ongoing" && (
+                <div className="absolute right-0 top-0 m-1 h-4 rounded bg-[#0007]">
+                  <p className="px-1 text-xs text-lighty">
+                    {bookCover.status}!
+                  </p>
+                </div>
+              )}
               <li className="absolute bottom-0 left-0 right-0 top-0 -z-10">
                 <Image
                   alt="Book cover"
                   src={urlFor(bookCover.image).url()}
                   fill={true}
-                  className="object-cover brightness-125 contrast-75"
+                  className="object-cover blur-[1px] brightness-90 saturate-150"
                 />
               </li>
-              <h2 className="text-center lowercase">{bookCover.title}</h2>
+              <h2 className="text-shadow text-center lowercase">
+                {bookCover.title}
+              </h2>
             </Link>
           );
         })}

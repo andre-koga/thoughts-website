@@ -2,8 +2,8 @@ import { book, bookCover, page } from "@/app/lib/definitions";
 import { client } from "@/app/lib/utils";
 
 export async function GetAllBookCovers(): Promise<bookCover[]> {
-  const query = `*[_type == "book"]{
-    title, slug, image
+  const query = `*[_type == "book"] | order(status desc, date desc) {
+    title, slug, image, status
   }`;
   const books: book[] = await client.fetch(query, { cache: "no-store" });
 

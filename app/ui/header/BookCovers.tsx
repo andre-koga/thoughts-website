@@ -36,7 +36,7 @@ export default function BookCovers({ value }: { value: bookCover[] }) {
                 alt="Book cover"
                 src={urlFor(bookCover.image).url()}
                 fill={true}
-                className="object-cover brightness-125 contrast-75"
+                className="object-cover blur-[0.5px] saturate-150"
               />
             </li>
             <h2 className="text-center lowercase">{bookCover.title}</h2>

@@ -10,7 +10,7 @@ export default async function Header() {
 
   return (
     <header>
-      <section className="m-2 -mb-2 mt-4 flex flex-col items-start sm:mx-6 sm:mb-0 sm:mt-6">
+      <section className="m-2 -mb-2 mt-4 flex place-content-between items-end sm:mx-6 sm:mb-0 sm:mt-6">
         <Link
           className="transition-all hover:scale-95 active:scale-90"
           href={"/"}
@@ -21,6 +21,13 @@ export default async function Header() {
             thoughts <span className="text-lg">by koga</span>
           </h1>
         </Link>
+        <a href="https://andrekoga.com" target="_blank">
+          <h1
+            className={`${dm_serif.className} text-shadow p-1 text-sm text-white underline`}
+          >
+            main website
+          </h1>
+        </a>
       </section>
       <section className="m-2 mb-2 sm:mx-6 sm:mb-4">
         <BookCovers value={bookCovers} />
